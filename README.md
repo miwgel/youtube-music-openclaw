@@ -60,13 +60,7 @@ After installing, start Kaset once to sign in to your YouTube Music account:
 open -a Kaset
 ```
 
-### Accessibility Permissions (Optional)
-Currently, Kaset opens a new window each time a song is played via URL scheme. This skill includes a workaround that automatically closes duplicate windows, but it requires accessibility permissions.
-
-Grant permissions to whatever app launches OpenClaw (Terminal, iTerm, Warp, VS Code, etc.):
-**System Settings > Privacy & Security > Accessibility**
-
-> **Note:** Future versions of Kaset may support direct search, which would eliminate the need for `yt-dlp`, `jq`, and this workaround.
+> **Note:** Future versions of Kaset may support direct search, which would eliminate the need for `yt-dlp` and `jq`.
 
 ## Manual Installation
 

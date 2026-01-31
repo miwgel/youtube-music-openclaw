@@ -36,12 +36,6 @@ open -g "kaset://play?v=VIDEO_ID"
 
 # 3. Start playback (URL doesn't auto-play)
 sleep 2 && osascript -e 'tell application "Kaset" to play'
-
-# 4. Close duplicate windows (optional, needs accessibility permissions)
-osascript -e 'tell application "System Events" to tell process "Kaset" to repeat while (count of windows) > 1
-click button 1 of window 1
-delay 0.3
-end repeat'
 ```
 
 When user wants to play something, search first, pick a random result, then play it.
