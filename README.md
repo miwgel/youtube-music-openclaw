@@ -1,6 +1,6 @@
 # YouTube Music for OpenClaw
 
-Control YouTube Music with natural language using [OpenClaw](https://openclaw.io).
+Control YouTube Music with natural language using [OpenClaw](https://openclaw.ai).
 
 > "Play some Led Zeppelin" • "Next song" • "What's playing?" • "Volume up"
 
@@ -32,7 +32,7 @@ The installer will prompt to install any missing dependencies.
 ## Requirements
 
 - macOS
-- [OpenClaw](https://openclaw.io)
+- [OpenClaw](https://openclaw.ai)
 - [Homebrew](https://brew.sh)
 
 ## Dependencies
@@ -54,15 +54,19 @@ Installed automatically by `install.sh`:
 
 ## Setup Notes
 
-### Accessibility Permissions
-Grant accessibility permissions to your terminal for full functionality:
-**System Settings > Privacy & Security > Accessibility**
-
 ### First Run
 After installing, start Kaset once to sign in to your YouTube Music account:
 ```bash
 open -a Kaset
 ```
+
+### Accessibility Permissions (Optional)
+Currently, Kaset opens a new window each time a song is played via URL scheme. This skill includes a workaround that automatically closes duplicate windows, but it requires accessibility permissions.
+
+Grant permissions to whatever app launches OpenClaw (Terminal, iTerm, Warp, VS Code, etc.):
+**System Settings > Privacy & Security > Accessibility**
+
+> **Note:** Future versions of Kaset may support direct search, which would eliminate the need for `yt-dlp`, `jq`, and this workaround.
 
 ## Manual Installation
 
