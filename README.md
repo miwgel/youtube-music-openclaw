@@ -60,7 +60,10 @@ After installing, start Kaset once to sign in to your YouTube Music account:
 open -a Kaset
 ```
 
-> **Note:** Future versions of Kaset may support direct search, which would eliminate the need for `yt-dlp` and `jq`.
+### Known Issue
+Kaset may open duplicate windows when playing new songs. This is a Kaset limitation. You can close extra windows manually.
+
+> **Note:** Future versions of Kaset may support direct search, which would eliminate the need for `yt-dlp`, `jq`, and fix the duplicate windows issue.
 
 ## Manual Installation
 
