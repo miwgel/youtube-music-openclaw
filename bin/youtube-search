@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# YouTube Music search using yt-dlp
+# Usage: youtube-search <query>
+# Returns audio-focused results from YouTube Music
+
+if [ -z "$1" ]; then
+  echo "Usage: youtube-search <query>" >&2
+  exit 1
+fi
+
+query="$*"
+encoded_query=$(echo "$query" | sed 's/ /+/g')
+
+# Search YouTube Music for audio versions
+yt-dlp "https://music.youtube.com/search?q=${encoded_query}" \
+  --flat-playlist \
+  --dump-json \
+  --no-warnings \
+  2>/dev/null | \
+  jq -s '
+    [.[] | select(.title) | select(.title | test("#") | not) | {id, title, duration: .duration_string, author: .channel}][0:15]
+  '
