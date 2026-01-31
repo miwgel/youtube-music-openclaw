@@ -6,13 +6,13 @@ Control YouTube Music with natural language using [OpenClaw](https://openclaw.ai
 
 Uses [Kaset](https://github.com/sozercan/kaset) as the YouTube Music player on macOS.
 
-## Quick Install
+## Install / Update
 
 ```bash
-git clone https://github.com/miwgel/youtube-music-openclaw.git ~/.openclaw/skills/youtube-music-openclaw && ~/.openclaw/skills/youtube-music-openclaw/install.sh
+SKILL_DIR=~/.openclaw/skills/youtube-music-openclaw && ([ -d "$SKILL_DIR" ] && git -C "$SKILL_DIR" pull || git clone https://github.com/miwgel/youtube-music-openclaw.git "$SKILL_DIR") && "$SKILL_DIR/install.sh"
 ```
 
-The installer will prompt to install any missing dependencies.
+The installer will prompt to install any missing dependencies. Run the same command to update.
 
 ## What You Can Do
 
