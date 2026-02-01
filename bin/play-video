@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Play a video in Kaset by ID
+# Handles the case when Kaset is not running
+
+if [ -z "$1" ]; then
+  echo "Usage: play-video <video_id>" >&2
+  exit 1
+fi
+
+VIDEO_ID="$1"
+
+# Check if Kaset is running
+if ! pgrep -x "Kaset" > /dev/null; then
+  # Start Kaset and wait for it to be ready
+  osascript -e 'tell application "Kaset" to launch'
+  sleep 2
+fi
+
+# Send the play URL
+open -g "kaset://play?v=${VIDEO_ID}"
+sleep 2
+
+# Start playback
+osascript -e 'tell application "Kaset" to play'

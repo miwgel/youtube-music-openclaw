@@ -31,15 +31,8 @@ osascript -e 'tell application "Kaset" to <command>'
 # 1. Search (returns JSON array with id, title)
 {baseDir}/bin/youtube-search "artist or song name"
 
-# 2. Ensure Kaset is running first (required if app was closed)
-osascript -e 'tell application "Kaset" to launch'
-sleep 1
-
-# 3. Play by ID (use -g to stay in background)
-open -g "kaset://play?v=VIDEO_ID"
-
-# 4. Start playback (URL doesn't auto-play)
-sleep 2 && osascript -e 'tell application "Kaset" to play'
+# 2. Play by ID
+{baseDir}/bin/play-video VIDEO_ID
 ```
 
 When user wants to play something, search first, pick a random result, then play it.
