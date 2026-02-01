@@ -103,9 +103,9 @@ else
     printf "${GREEN}✓${NC} Already in correct location\n"
 fi
 
-# 9. Hacer ejecutable el script de búsqueda
-chmod +x "$SCRIPT_DIR/bin/youtube-search"
-printf "${GREEN}✓${NC} Search script configured\n"
+# 9. Hacer ejecutables todos los scripts
+chmod +x "$SCRIPT_DIR/bin/"*
+printf "${GREEN}✓${NC} Scripts configured\n"
 
 printf "\n"
 printf "${GREEN}════════════════════════════════════════${NC}\n"
