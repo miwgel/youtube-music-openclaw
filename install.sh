@@ -78,34 +78,13 @@ if ! command -v jq &> /dev/null; then
 fi
 printf "${GREEN}✓${NC} jq available\n"
 
-# 6. Crear directorio de skills si no existe
-mkdir -p ~/.openclaw/skills
-
-# 7. Determinar ubicación del script
+# 6. Determinar ubicación del script
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-# 8. Crear symlink
-if [[ "$SCRIPT_DIR" != "$HOME/.openclaw/skills/youtube-music-openclaw" ]]; then
-    if [[ -e ~/.openclaw/skills/youtube-music-openclaw ]]; then
-        printf "\n${YELLOW}~/.openclaw/skills/youtube-music-openclaw already exists${NC}\n"
-        read -p "Replace it? [y/N] " -n 1 -r
-        echo
-        if [[ $REPLY =~ ^[Yy]$ ]]; then
-            rm -rf ~/.openclaw/skills/youtube-music-openclaw
-        else
-            printf "Keeping existing installation.\n"
-            exit 0
-        fi
-    fi
-    ln -s "$SCRIPT_DIR" ~/.openclaw/skills/youtube-music-openclaw
-    printf "${GREEN}✓${NC} Skill linked to ~/.openclaw/skills/youtube-music-openclaw\n"
-else
-    printf "${GREEN}✓${NC} Already in correct location\n"
-fi
-
-# 9. Hacer ejecutables todos los scripts
+# 7. Hacer ejecutables todos los scripts
 chmod +x "$SCRIPT_DIR/bin/"*
 printf "${GREEN}✓${NC} Scripts configured\n"
+printf "${GREEN}✓${NC} Skill ready at $SCRIPT_DIR\n"
 
 printf "\n"
 printf "${GREEN}════════════════════════════════════════${NC}\n"
